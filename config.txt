@@ -1,2 +1,2 @@
-auth=46c3b7f72bdcb0ab1e96b28de72142f9
-key=64e316d70be448978f616283e9c46107
+auth=
+key=
