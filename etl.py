@@ -14,6 +14,7 @@ import pandas as pd
 from fpdf import FPDF
 from fpdf.enums import XPos, YPos
 import random
+from typing import Dict
 
 class PDF(FPDF):
     '''
@@ -39,7 +40,7 @@ class PDF(FPDF):
         self.cell(0,10,f'Page {self.page_no()}',align = 'C')
 
 
-def extract(team_name, auth, key):
+def extract(team_name: str, auth: str, key: str):
     '''
     Función que extrae los datos a incluir en el
     reporde de dos apis y los guarda en un diccionario
@@ -113,7 +114,7 @@ def extract(team_name, auth, key):
     return dic
 
 
-def transform(dic):
+def transform(dic: Dict):
     '''
     La mayoría de los datos que devuelve, se pueden cargar en un pdf
     como están. Para facilitar la subida de los jugadores y sus
@@ -170,7 +171,7 @@ def transform(dic):
     return df, df2
 
 
-def load(dic, df, df2):
+def load(dic: Dict, df: object, df2: object):
     '''
     Función que crea un pdf con todos los datos
     recogidos del equipo
